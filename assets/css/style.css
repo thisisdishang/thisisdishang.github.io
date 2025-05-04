@@ -31,26 +31,25 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 .social {
-  margin: 0 auto;
-  width: auto;
-  text-align: inherit;
-  /* padding: 10px; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .icon-btn {
-  margin-left: auto;
-  width: 50px;
-  height: 50px;
-  border: 0;
-  color: #FFFFFF;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  font-size: 32px;
   cursor: pointer;
-  font-size: 30px;
-  line-height: 70px;
-  border-radius: 45px;
-  display: inline-block;
-  margin: 4px;
+  color: white;
+  background-color: transparent;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
+/* Brand-specific colors */
 .github {
   color: black;
 }
@@ -63,31 +62,31 @@
   color: #e4691c;
 }
 
-.angellist {
-  color: grey;
+.instagram {
+  color: #c204df;
 }
 
+/* Hover effects */
 .icon-btn:hover {
-  transform: scale(1.10);
-  color: #FFFFFF;
-}
-
-.linkedin:hover {
-  background-color: #0077b5;
-}
-
-.angellist:hover {
-  background-color: grey;
+  transform: scale(1.1);
+  color: white;
 }
 
 .github:hover {
   background-color: black;
 }
 
+.linkedin:hover {
+  background-color: #0077b5;
+}
+
 .mail:hover {
   background-color: #e4691c;
 }
 
+.instagram:hover {
+  background-color: #DF00E4;
+}
 
 /* Buttons - Read Me, Contact Us */
 

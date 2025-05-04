@@ -1,2 +1,2 @@
 # thisisdishang.github.io
-Dishang Portfolio
+Dishang H. Rana Personal Portfolio
