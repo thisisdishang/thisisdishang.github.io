@@ -28,6 +28,23 @@
   right: 0;
 }
 
+.flow-text {
+  text-align: justify;
+}
+
+.flow-text a:hover {
+  color: #80cbc4;
+  text-decoration: none;
+}
+
+.caption a {
+  color: #fff;
+}
+
+.caption a:hover {
+  color: #80cbc4;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 .social {
