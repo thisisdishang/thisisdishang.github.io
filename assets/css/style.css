@@ -401,6 +401,7 @@ h3 {
 }
 
 .card {
+  border-radius: 12px;
   margin-bottom: 60px;
 }
 
@@ -441,6 +442,10 @@ h3 {
   letter-spacing: 1px;
   margin-top: 2rem;
   text-transform: uppercase;
+}
+
+#education .card {
+  margin-bottom: 40px;
 }
 
 #experience .card-action {
