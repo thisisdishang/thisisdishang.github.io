@@ -521,6 +521,10 @@ a.hoverline:hover {
   padding-bottom: 20px;
 }
 
+#skills .col {
+  margin-block-start: 20px;
+}
+
 #skills .col img.responsive-img {
   margin: 0 auto;
   max-height: 100px;
