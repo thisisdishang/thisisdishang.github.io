@@ -66,6 +66,16 @@
   <meta name="robots" content="index, follow" />
   <!-- Google Site Verification for indexing -->
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({
+        publicKey: "-TdI62fZBnYQIHB_M",
+      });
+    })();
+  </script>
 </head>
 
 <body>
@@ -833,48 +843,76 @@
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text teal">Contact</h3>
       <div class="container">
-        <div class="row">
+        <div class="row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+
           <!-- Left Column: Contact Info -->
-          <div class="col s12 m6">
-            <p>
-              <a aria-label="Email Dishang" href="mailto:dishangkumarrana@gmail.com" target="_blank" data-position="top"
-                data-tooltip="Email Dishang"
-                class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                  class="fa fa-envelope"></i></a>
-              <a aria-label="Email Dishang" href="mailto:dishangkumarrana@gmail.com"
-                class="hoverline">dishangkumarrana@gmail.com</a>
-            </p>
-            <p>
-              <a aria-label="View Dishang on LinkedIn" href="http://linkedin.com/in/thisisdishang" target="_blank"
-                data-position="top" data-tooltip="View Dishang on LinkedIn"
-                class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                  class="fa fa-linkedin"></i></a>
-              <a aria-label="Dishang on LinkedIn" href="http://linkedin.com/in/thisisdishang" class="hoverline"
-                target="_blank">linkedin.com/in/thisisdishang</a>
-            </p>
-            <p>
-              <a aria-label="View Dishang on GitHub" href="http://github.com/thisisdishang" target="_blank"
-                data-position="top" data-tooltip="View Dishang on GitHub"
-                class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                  class="fa fa-github"></i></a>
-              <a aria-label="Dishang on Github" href="http://github.com/thisisdishang" class="hoverline"
-                target="_blank">github.com/thisisdishang</a>
-            </p>
+          <div class="col s12 m6" style="padding: 20px;">
+            <section class="contact-form">
+              <h4 class="form-title">Contact Form</h4>
+              <form id="contact-form" onsubmit="sendEmail(); return false;" class="form" data-form>
+                <div class="input-field">
+                  <input id="fullname" type="text" name="fullname" class="validate" required placeholder="Full Name"
+                    data-form-input>
+                </div>
+                <div class="input-field">
+                  <input id="email" type="email" name="email" class="validate" required placeholder="Email Address"
+                    data-form-input>
+                </div>
+                <div class="input-field">
+                  <textarea id="message" name="message" class="materialize-textarea" required placeholder="Your Message"
+                    data-form-input></textarea>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" data-form-btn>
+                  <i class="fa fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+              <!-- Snackbar -->
+              <div id="snackbar"></div>
+            </section>
           </div>
 
           <!-- Right Column: Google Map -->
-          <div class="col s12 m6">
-            <div class="video-container">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215497.66622103166!2d72.65747188205489!3d21.15944056645878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e1!3m2!1sen!2sin!4v1746201817452!5m2!1sen!2sin"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+          <div class="col s12 m6" style="padding: 20px;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215497.66622103166!2d72.65747188205489!3d21.15944056645878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e1!3m2!1sen!2sin!4v1746201817452!5m2!1sen!2sin"
+              width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
+
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Sending Email Function -->
+  <script>
+    function sendEmail() {
+      const params = {
+        fullname: document.getElementById("fullname").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      };
+
+      emailjs.send("service_50fj19i", "template_8ecydfa", params)
+        .then(function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          document.getElementById("snackbar").textContent = "Message Sent Successfully!";
+          showSnackbar();
+          document.getElementById("contact-form").reset();
+        }, function (error) {
+          console.log("FAILED...", error);
+          document.getElementById("snackbar").textContent = "Failed to Send Message.";
+          showSnackbar();
+        });
+    }
+
+    function showSnackbar() {
+      const snackbar = document.getElementById("snackbar");
+      snackbar.className = "show";
+      setTimeout(() => snackbar.className = snackbar.className.replace("show", ""), 3000);
+    }
+  </script>
 
   <!-- typed.js -->
   <script src="assets/vendor/typed.js/typed.min.js"></script>
@@ -886,7 +924,6 @@
       backSpeed: 40
     });
   </script>
-
 
   <!-- jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
