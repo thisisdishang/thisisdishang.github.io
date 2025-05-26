@@ -840,38 +840,41 @@
     </section>
 
     <!-- Seventh Section: Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
+    <section id="contact" class="section scrollspy">
+      <h3 class="page-title white-text teal center-align">Contact</h3>
       <div class="container">
         <div class="row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
 
-          <!-- Left Column: Contact Info -->
-          <div class="col s12 m6" style="padding: 20px;">
-            <section class="contact-form">
-              <h4 class="form-title">Contact Form</h4>
-              <form id="contact-form" onsubmit="sendEmail(); return false;" class="form" data-form>
-                <div class="input-field">
-                  <input id="fullname" type="text" name="fullname" class="validate" required placeholder="Full Name"
-                    data-form-input>
-                </div>
-                <div class="input-field">
-                  <input id="email" type="email" name="email" class="validate" required placeholder="Email Address"
-                    data-form-input>
-                </div>
-                <div class="input-field">
-                  <textarea id="message" name="message" class="materialize-textarea" required placeholder="Your Message"
-                    data-form-input></textarea>
-                </div>
-                <button class="btn waves-effect waves-light" type="submit" data-form-btn>
-                  <i class="fa fa-paper-plane"></i> Send Message
-                </button>
-              </form>
-              <!-- Snackbar -->
-              <div id="snackbar"></div>
-            </section>
+          <!-- Left Column: Contact Form Card -->
+          <div class="col s12 m6" style="display: flex; justify-content: center;">
+            <div class="card z-depth-3" style="border-radius: 16px; width: 100%; max-width: 450px;">
+              <div class="card-content">
+                <h5 class="teal-text center-align" style="font-weight: 550; font-size: 28;">Contact Form</h5>
+                <form id="contact-form" onsubmit="sendEmail(); return false;">
+                  <div class="input-field">
+                    <input id="fullname" type="text" name="fullname" required>
+                    <label for="fullname">Full Name</label>
+                  </div>
+                  <div class="input-field">
+                    <input id="email" type="email" name="email" required>
+                    <label for="email">Email Address</label>
+                  </div>
+                  <div class="input-field">
+                    <textarea id="message" name="message" class="materialize-textarea" required></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                  &nbsp;
+                  <div class="center-align">
+                    <button class="btn waves-effect waves-light teal" type="submit">
+                      <i class="fa fa-paper-plane left"></i> Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
 
-          <!-- Right Column: Google Map -->
+          <!-- Right Column: Google Map (unchanged) -->
           <div class="col s12 m6" style="padding: 20px;">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215497.66622103166!2d72.65747188205489!3d21.15944056645878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e1!3m2!1sen!2sin!4v1746201817452!5m2!1sen!2sin"
