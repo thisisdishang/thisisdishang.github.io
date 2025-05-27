@@ -75,12 +75,14 @@
   color: #0077b5;
 }
 
-.mail {
-  color: #e4691c;
+.instagram {
+  color: #E1306C;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.instagram {
-  color: #c204df;
+.mail {
+  color: #D93025;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hover effects */
@@ -97,12 +99,12 @@
   background-color: #0077b5;
 }
 
-.mail:hover {
-  background-color: #e4691c;
+.instagram:hover {
+  background-color: #FCAF45;
 }
 
-.instagram:hover {
-  background-color: #DF00E4;
+.mail:hover {
+  background-color: #D93025;
 }
 
 /* Buttons - Read Me, Contact Us */
