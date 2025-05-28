@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+/* -------------------- Profile Picture -------------------- */
 .profile-pic {
   position: relative;
   max-width: 130px;
@@ -6,8 +9,6 @@
   height: auto;
   overflow: hidden;
   /* display: inline-block; */
-
-
   /* background-size: cover;  */
   margin: -31px;
   margin-left: -7px;
@@ -20,6 +21,7 @@
   height: auto;
 }
 
+/* -------------------- Tracker -------------------- */
 .tracker {
   /* visibility: hidden; */
   position: fixed;
@@ -28,6 +30,7 @@
   right: 0;
 }
 
+/* -------------------- Typography & Links -------------------- */
 .flow-text {
   text-align: justify;
 }
@@ -45,8 +48,23 @@
   color: #80cbc4;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+a {
+  color: #004d40;
+}
 
+a.hoverline {
+  border-bottom: 3px solid transparent !important;
+  padding: 3px 3px 0 3px;
+  transition: 0.25s all;
+  -moz-transition: 0.25s all;
+  -webkit-transition: 0.25s all;
+}
+
+a.hoverline:hover {
+  border-bottom: 3px solid #004d40 !important;
+}
+
+/* -------------------- Social Icons -------------------- */
 .social {
   display: flex;
   flex-wrap: wrap;
@@ -107,8 +125,7 @@
   background-color: #D93025;
 }
 
-/* Buttons - Read Me, Contact Us */
-
+/* -------------------- Buttons -------------------- */
 .readme {
   position: relative;
   padding: 11px 35px;
@@ -127,7 +144,6 @@
   color: white;
   background-color: #00796b;
 } */
-
 .contactme {
   position: relative;
   padding: 11px 35px;
@@ -148,41 +164,13 @@
   background-color: white;
 }
 
-/* main body */
-
-/* body-color */
-
+/* -------------------- Main Body -------------------- */
 body {
   color: #333;
   font-size: 18px;
 }
 
-/* body {
-  color: black;
-  font-size: 18px;
-} */
-
-/* main a -- links */
-
-/* a {
-  color: #009688;
-} */
-
-a {
-  color: #004d40;
-}
-
-/* main blockqoute */
-
-/* blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
-  font-size: 125%;
-  font-weight: 400;
-  margin: 20px 0;
-  padding-left: 1.5rem;
-} */
-
+/* -------------------- Blockquote -------------------- */
 blockquote {
   border-left: 5px solid #795548;
   color: #795548;
@@ -197,23 +185,17 @@ blockquote * {
   line-height: inherit;
 }
 
+/* -------------------- Text Center -------------------- */
 .text-center {
   text-align: center;
 }
 
-/* main nav */
-
+/* -------------------- Navigation -------------------- */
 nav {
   background: white;
   box-shadow: none;
   height: 0;
 }
-
-/* nav {
-  background: rgb(149, 126, 212);
-  box-shadow: none;
-  height: 0;
-} */
 
 nav i {
   padding: 0 15px;
@@ -221,18 +203,13 @@ nav i {
   top: 5px;
 }
 
-/* main */
-
-/* main {
-  background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
-} */
-
+/* -------------------- Main -------------------- */
 main {
   background: url(../../assets/img/bg.png) repeat;
   padding-left: 190px;
 }
 
+/* -------------------- Definition Lists -------------------- */
 dl {
   margin-top: 0.5rem;
 }
@@ -248,6 +225,7 @@ dt {
   margin-left: 0.5rem;
 }
 
+/* -------------------- Side Navigation -------------------- */
 ul.side-nav {
   width: 190px;
 }
@@ -255,14 +233,6 @@ ul.side-nav {
 ul.side-nav li {
   padding: 0;
 }
-
-/* ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(48, 122, 207);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-} */
 
 ul.side-nav.fixed a {
   box-sizing: content-box;
@@ -277,14 +247,6 @@ ul.table-of-contents li.logo a:hover {
   border: none;
   font-weight: 200;
 }
-
-/* ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
-} */
 
 ul.side-nav.fixed li.logo {
   background-color: #fafafa;
@@ -322,10 +284,12 @@ li.logo span {
   font-weight: inherit;
 }
 
+/* -------------------- Container -------------------- */
 .container {
   width: 95%;
 }
 
+/* -------------------- Headings -------------------- */
 h3 {
   font-weight: 200;
   margin-bottom: 60px;
@@ -334,6 +298,7 @@ h3 {
   text-transform: uppercase;
 }
 
+/* -------------------- Section -------------------- */
 .section {
   padding-bottom: 30px;
   padding-top: 0;
@@ -344,13 +309,7 @@ h3 {
   height: 100vh;
 }
 
-/* Original */
-
-/* #intro.section {
-  background: url(../../assets/img/white-ai-wallpaper.jpg) no-repeat top center/cover;
-  position: relative;
-} */
-
+/* -------------------- Intro Section -------------------- */
 #intro.section {
   background: #a7ffeb repeat;
   position: relative;
@@ -363,13 +322,6 @@ h3 {
   position: absolute;
   top: 0;
 }
-
-/* #intro.section .container *:not(span) {
-  font-weight: 300;
-  line-height: 150%;
-  padding: 0 30px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-} */
 
 #intro.section .container *:not(span) {
   font-weight: 300;
@@ -387,6 +339,7 @@ h3 {
   padding: 0 10px;
 }
 
+/* -------------------- Overlay -------------------- */
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
   height: 100%;
@@ -396,15 +349,22 @@ h3 {
   width: 100%;
 }
 
+/* -------------------- Waves Effect -------------------- */
 .waves-effect.waves-blue .waves-ripple {
   /* The alpha value allows the text and background color
    of the button to still show through. */
   background-color: rgba(33, 150, 243, 0.2);
 }
 
+/* -------------------- Card -------------------- */
 .card {
   border-radius: 12px;
   margin-bottom: 60px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .card .role {
@@ -495,24 +455,29 @@ h3 {
   margin-left: 10px;
 }
 
-a.hoverline {
-  border-bottom: 3px solid transparent !important;
-  padding: 3px 3px 0 3px;
-  transition: 0.25s all;
-  -moz-transition: 0.25s all;
-  -webkit-transition: 0.25s all;
+.card.large .card-content p {
+  color: inherit;
+  margin: 0;
+  padding: 30px 0;
 }
 
-/* main a.hoverline */
-
-/* a.hoverline:hover {
-  border-bottom: 3px solid #24305e !important;
-} */
-
-a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
+.card.large .card-image {
+  height: 230px;
 }
 
+.card.large .card-content {
+  height: auto;
+}
+
+.card.medium .card-image {
+  height: 240px;
+}
+
+.card-action a.btn-floating {
+  margin-bottom: 0;
+}
+
+/* -------------------- Skills Section -------------------- */
 #skills .card.large {
   height: 360px;
 }
@@ -536,33 +501,25 @@ a.hoverline:hover {
   display: table-cell;
 }
 
-.card.large .card-content p {
-  color: inherit;
-  margin: 0;
-  padding: 30px 0;
-}
-
+/* -------------------- Experience Section -------------------- */
 #experience .card-content .row {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
 
-.card.large .card-image {
-  height: 230px;
+#experience .col.s12.m2 {
+  text-align: center;
 }
 
-.card.large .card-content {
-  height: auto;
+#experience .card .col.s12.m2 a {
+  display: block;
 }
 
-.card.medium .card-image {
-  height: 240px;
+#experience .card .col.s12.m2 a img {
+  max-height: 60px;
 }
 
-.card-action a.btn-floating {
-  margin-bottom: 0;
-}
-
+/* -------------------- Snackbar -------------------- */
 #snackbar {
   visibility: hidden;
   min-width: 250px;
@@ -583,16 +540,14 @@ a.hoverline:hover {
   opacity: 1;
 }
 
+/* -------------------- Contact -------------------- */
 #contact a:not(.btn-floating) {
   bottom: 6px;
   left: 20px;
   position: relative;
 }
 
-#experience .col.s12.m2 {
-  text-align: center;
-}
-
+/* -------------------- Miscellaneous -------------------- */
 .fa-external-link:before {
   left: 3px;
   position: relative;
@@ -607,26 +562,16 @@ small {
   color: #666 !important;
 }
 
-/* main .teal-text */
-
+/* -------------------- Teal Text & Background -------------------- */
 .teal-text {
   color: #008073 !important;
 }
-
-/* .teal-text {
-  color: #0b5e86 !important;
-} */
-
-/* .teal */
 
 .teal {
   background-color: #008073 !important;
 }
 
-/* .teal {
-  background-color: #00695c !important;
-} */
-
+/* -------------------- Responsive Media Queries -------------------- */
 @media (min-width: 1200px) {
   #experience .container {
     width: 860px;
@@ -776,12 +721,4 @@ small {
   #intro.section {
     background-position-x: 30%;
   }
-}
-
-.card {
-  transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
