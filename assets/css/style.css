@@ -523,14 +523,17 @@ h3 {
 #snackbar {
   visibility: hidden;
   min-width: 250px;
-  margin-top: 10px;
-  background-color: #323232;
+  background-color: #00796b;
   color: #fff;
   text-align: center;
   border-radius: 4px;
   padding: 12px;
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  /* OUTSIDE layout flow */
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
