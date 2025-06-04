@@ -997,28 +997,33 @@
           <!-- Left Column: Contact Form Card -->
           <div class="col s12 m6" style="display: flex; justify-content: center;">
             <div class="card z-depth-3" style="border-radius: 16px; width: 100%; max-width: 450px;">
-              <div class="card-content">
-                <h5 class="teal-text center-align" style="font-weight: 550; font-size: 28;">Contact Form</h5>
+              <div class="card-content" style="padding: 20px 24px;">
+                <h5 class="teal-text center-align" style="font-weight: 550; font-size: 24px; margin-bottom: 16px;">
+                  Contact Form</h5>
+
                 <form id="contact-form" onsubmit="sendEmail(); return false;">
-                  <div class="input-field">
+                  <div class="input-field" style="margin-bottom: 20px;">
                     <input id="fullname" type="text" name="fullname" required>
                     <label for="fullname">Full Name</label>
                   </div>
-                  <div class="input-field">
+
+                  <div class="input-field" style="margin-bottom: 20px;">
                     <input id="email" type="email" name="email" required>
                     <label for="email">Email Address</label>
                   </div>
-                  <div class="input-field">
+
+                  <div class="input-field" style="margin-bottom: 20px;">
                     <textarea id="message" name="message" class="materialize-textarea" required></textarea>
                     <label for="message">Your Message</label>
                   </div>
-                  &nbsp;
-                  <div class="center-align">
+
+                  <div class="center-align" style="margin-top: 12px;">
                     <button class="btn waves-effect waves-light teal" type="submit">
                       <i class="fa fa-paper-plane left"></i> Send Message
                     </button>
                   </div>
                 </form>
+
                 <!-- Snackbar -->
                 <div id="snackbar"></div>
               </div>
