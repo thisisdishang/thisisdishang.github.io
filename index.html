@@ -1043,32 +1043,84 @@
     </section>
   </main>
 
-  <!-- Sending Email Function -->
+  <!-- Form Validation -->
+  <script>
+    function validateContactForm() {
+      const form = document.getElementById('contact-form');
+      const name = form.fullname.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      const snackbar = document.getElementById("snackbar");
+
+      function showSnackbar(message, success = true) {
+        snackbar.textContent = message;
+        snackbar.style.backgroundColor = success ? "#00796b" : "#c62828"; // teal or red
+        snackbar.classList.add("show");
+        setTimeout(() => snackbar.classList.remove("show"), 3000);
+      }
+
+      function isValidEmail(email) {
+        const pattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        return pattern.test(email);
+      }
+
+      if (name.length < 2) {
+        showSnackbar("Please enter a valid name.", false);
+        return false;
+      }
+
+      if (!isValidEmail(email)) {
+        showSnackbar("Please enter a valid email address.", false);
+        return false;
+      }
+
+      if (message.length < 10) {
+        showSnackbar("Message should be at least 10 characters.", false);
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+  <!-- Sending Email -->
   <script>
     function sendEmail() {
+      if (!validateContactForm()) return;
+
+      const form = document.getElementById('contact-form');
+      const submitBtn = form.querySelector("button[type='submit']");
+      const snackbar = document.getElementById("snackbar");
+
       const params = {
-        fullname: document.getElementById("fullname").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
+        fullname: form.fullname.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim(),
       };
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa fa-spinner fa-spin left"></i> Sending...`;
 
       emailjs.send("service_50fj19i", "template_8ecydfa", params)
         .then(function (response) {
           console.log("SUCCESS!", response.status, response.text);
-          document.getElementById("snackbar").textContent = "Message Sent Successfully!";
-          showSnackbar();
-          document.getElementById("contact-form").reset();
+          snackbar.textContent = "Message Sent Successfully!";
+          snackbar.style.backgroundColor = "#00796b";
+          snackbar.classList.add("show");
+          setTimeout(() => snackbar.classList.remove("show"), 3000);
+          form.reset();
         }, function (error) {
           console.log("FAILED...", error);
-          document.getElementById("snackbar").textContent = "Failed to Send Message.";
-          showSnackbar();
+          snackbar.textContent = "Failed to Send Message.";
+          snackbar.style.backgroundColor = "#c62828";
+          snackbar.classList.add("show");
+          setTimeout(() => snackbar.classList.remove("show"), 3000);
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<i class="fa fa-paper-plane left"></i> Send Message`;
         });
-    }
-
-    function showSnackbar() {
-      const snackbar = document.getElementById("snackbar");
-      snackbar.className = "show";
-      setTimeout(() => snackbar.className = snackbar.className.replace("show", ""), 3000);
     }
   </script>
 
